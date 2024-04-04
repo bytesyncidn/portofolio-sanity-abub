@@ -18,7 +18,7 @@ import {
   dataset,
   previewSecretId,
   projectId,
-} from '~/lib/sanity.api'
+} from '~/lib/sanity/sanity.api'
 import { schema } from '~/schemas'
 
 const iframeOptions = {
