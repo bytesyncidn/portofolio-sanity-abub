@@ -5,6 +5,5 @@ import { Media } from '~/types'
 
 export const mediaQuery = groq`*[_type == "media"]`
 
-export async function getMedia(client: SanityClient): Promise<Media[]> {
-  return await client.fetch(mediaQuery)
-}
+export const getMedia = async (client: SanityClient): Promise<Media[]> =>
+  await client.fetch(mediaQuery)
