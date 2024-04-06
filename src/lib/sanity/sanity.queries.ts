@@ -1,9 +1,9 @@
-import groq from 'groq'
-import { type SanityClient } from 'next-sanity'
+import groq from 'groq';
+import { type SanityClient } from 'next-sanity';
 
-import { Media } from '~/types'
+import { Media } from '~/types';
 
-export const mediaQuery = groq`*[_type == "media"]`
+export const mediaQuery = groq`*[_type == "media"]`;
 
 export const getMedia = async (client: SanityClient): Promise<Media[]> =>
-  await client.fetch(mediaQuery)
+  await client.fetch(mediaQuery);

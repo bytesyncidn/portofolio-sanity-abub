@@ -1,4 +1,4 @@
-import type { ImageAsset } from '@sanity/types'
+import type { ImageAsset } from '@sanity/types';
 
 export interface Media {
   _type: 'media'
