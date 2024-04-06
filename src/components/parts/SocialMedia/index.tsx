@@ -15,7 +15,7 @@ const SocialMedia = ({
   return (
     <div
       className={cn(
-        'fixed bottom-10 py-4 px-10 bg-white',
+        'fixed bottom-10 py-8 px-24 bg-white',
         ROUNDED_CLASSNAME[rounded],
         POSITION_CLASSNAME[position],
         className,

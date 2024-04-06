@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <div>
       <header className="fixed right-10 top-10 z-10">
-        <h1 className="text-4xl fton-bold">Tengen Hekaru</h1>
-        <h2 className="text-3xl font-light italic">Illustration Studio</h2>
+        <h1 className="text-7xl font-medium">Tengen Hekaru</h1>
+        <h2 className="text-5xl font-light italic mt-5">Illustration Studio</h2>
       </header>
 
       <main className="h-dvh overflow-hidden">
