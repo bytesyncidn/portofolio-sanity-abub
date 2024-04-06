@@ -1,20 +1,21 @@
-import Each from '~/components/elements/Each';
-
 import ImagePortfolioMarquee from '../ImagePortfolioMarquee';
 
 const images = new Array(9).fill('https://placehold.co/265x335.png');
 
 const ImagePortfolioMarqueeGroup = () => {
   return (
-    // <Each
-    //   list={new Array(3).fill(0)}
-    //   render={() => <ImagePortfolioMarquee images={images} />}
-    // />
-    // -translate-x-[10%] translate-y-[110%]
     <>
       <ImagePortfolioMarquee images={images} translate={{ x: '10px' }} />
-      <ImagePortfolioMarquee images={images} translate={{ x: '-410px' }} speed={50} />
-      <ImagePortfolioMarquee images={images} translate={{ x: '-840px' }} speed={25} />
+      <ImagePortfolioMarquee
+        images={images}
+        translate={{ x: '-410px' }}
+        speed={50}
+      />
+      <ImagePortfolioMarquee
+        images={images}
+        translate={{ x: '-840px' }}
+        speed={25}
+      />
     </>
   );
 };

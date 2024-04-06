@@ -3,17 +3,17 @@ const config = {
   images: {
     remotePatterns: [
       { hostname: 'cdn.sanity.io' },
-      { hostname: 'placehold.co' }
-    ]
+      { hostname: 'placehold.co' },
+    ],
   },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
-    });
+    })
 
-    return config;
+    return config
   },
-};
+}
 
-export default config;
+export default config

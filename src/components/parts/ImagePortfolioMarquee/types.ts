@@ -1,8 +1,8 @@
 export type ImagePortfolioMarqueeProps = {
-  images: string[];
+  images: string[]
   translate?: {
-    x?: string | number;
-    y?: string | number;
-  },
-  speed?: number;
-};
+    x?: string | number
+    y?: string | number
+  }
+  speed?: number
+}

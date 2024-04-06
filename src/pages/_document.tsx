@@ -1,9 +1,4 @@
-import Document, {
-  Head,
-  Html,
-  Main,
-  NextScript,
-} from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 import ubuntu from '~/assets/fonts/ubuntu';
 
