@@ -1,8 +1,24 @@
-import type { ImageAsset } from '@sanity/types';
-
-export interface Media {
-  _type: 'media'
-  _id: string
-  title: string
-  mainImage: ImageAsset
+export interface UserAgent {
+  isBot: boolean
+  ua: string
+  browser: {
+    name?: string
+    version?: string
+  }
+  device: {
+    model?: string
+    type?: string
+    vendor?: string
+  }
+  engine: {
+    name?: string
+    version?: string
+  }
+  os: {
+    name?: string
+    version?: string
+  }
+  cpu: {
+    architecture?: string
+  }
 }

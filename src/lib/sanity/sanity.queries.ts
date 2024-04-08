@@ -1,7 +1,7 @@
 import groq from 'groq';
 import { type SanityClient } from 'next-sanity';
 
-import { Media } from '~/types';
+import { Media } from '~/types/sanity';
 
 export const mediaQuery = groq`*[_type == "media"]`;
 

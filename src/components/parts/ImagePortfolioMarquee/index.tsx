@@ -1,8 +1,12 @@
 import Image from 'next/image';
+import { useMemo } from 'react';
 import Marquee from 'react-fast-marquee';
 
-// import Marquee from 'react-marquee-slider';
-import { generateRandomKey } from '~/lib/utils';
+import {
+  generateRandomKey,
+  getDeviceUserAgentServer,
+  UserAgentDevice,
+} from '~/lib/utils';
 
 import { ImagePortfolioMarqueeProps } from './types';
 
@@ -11,6 +15,8 @@ const ImagePortfolioMarquee = ({
   translate,
   speed,
 }: ImagePortfolioMarqueeProps) => {
+  const device = getDeviceUserAgentServer();
+
   const getTranslateValue = (value?: string | number) => {
     const transalteValue = value ?? 0;
 
@@ -19,9 +25,17 @@ const ImagePortfolioMarquee = ({
     return transalteValue + 'px';
   };
 
+  const containerClassName = useMemo(() => {
+    if ([UserAgentDevice.Mobile, UserAgentDevice.Tablet].includes(device)) {
+      return 'origin-left w-[110vh] rotate-90 fixed left-1/2';
+    }
+
+    return 'fixed top-1/2 left-1/2 rotate-45 origin-center w-[150vw]';
+  }, [device]);
+
   return (
     <div
-      className="top-1/2 left-1/2 rotate-45 origin-center fixed w-[150vw]"
+      className={containerClassName}
       style={{
         translate: `calc(-50% + ${getTranslateValue(translate?.x)}) calc(-50% + ${getTranslateValue(translate?.y)})`,
       }}
@@ -30,42 +44,18 @@ const ImagePortfolioMarquee = ({
         {images.map((image) => (
           <div
             key={generateRandomKey()}
-            className="aspect-square h-[200px] xl:h-[335px] mr-8 flex justify-center"
+            className="aspect-square h-[200px] md:h-[350px] xl:h-[335px] mr-4 lg:mr-8 flex justify-center"
           >
             <Image
               src={image}
               alt="image"
               width="265"
               height="335"
-              className="aspect-[265/335] h-full object-cover -rotate-90 rounded-xl shadow-abub"
+              className="w-[158px] h-[200px] md:w-[277px] md:h-[350px] xl:w-[265px] xl:h-[335px] -rotate-90 object-cover rounded-xl shadow-abub-down ld:shadow-abub-left"
             />
           </div>
         ))}
       </Marquee>
-
-      {/* <Marquee
-        direction="rtl"
-        velocity={25 + speed}
-        resetAfterTries={2000}
-        onInit={() => {}}
-        onFinish={() => {}}
-        scatterRandomly={false}
-      >
-        {images.map((image) => (
-          <div
-            key={generateRandomKey()}
-            className="aspect-square h-[200px] xl:h-[335px] mr-8 flex justify-center"
-          >
-            <Image
-              src={image}
-              alt="image"
-              width="265"
-              height="335"
-              className="aspect-[265/335] h-full object-contain -rotate-90 rounded-xl shadow-abub"
-            />
-          </div>
-        ))}
-      </Marquee> */}
     </div>
   );
 };

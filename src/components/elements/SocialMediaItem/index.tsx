@@ -18,14 +18,14 @@ const SocialMediaItem = (props: SocialMediaItemProps) => {
     <a
       href={props.url}
       target="_blank"
-      className="flex gap-3 items-center"
+      className="flex gap-1 md:gap-3 items-center"
       rel="noreferrer noopener"
     >
-      <div className="p-3 rounded-full bg-abub-black">
-        <socialMediaRender.icon className="text-4xl text-white" />
+      <div className="p-1 md:p-3 rounded-full bg-abub-black">
+        <socialMediaRender.icon className="md:text-4xl text-white" />
       </div>
 
-      <div className="flex flex-col text-lg">
+      <div className="flex flex-col text-[10px] md:text-lg">
         <p>{socialMediaRender.label}</p>
         <p className="font-medium">{props.value}</p>
       </div>
