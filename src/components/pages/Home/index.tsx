@@ -11,7 +11,8 @@ const Home = () => {
 
       <main className="h-dvh overflow-hidden">
         <ImagePortfolioMarqueeGroup />
-        <div className="rotate-180 fixed right-1/4 top-1/4 translate-x-1/2 scale-50">
+
+        <div className="rotate-180 fixed right-[20%] top-[45%] translate-x-1/2 scale-50 blur-sm opacity-50">
           <ImagePortfolioMarqueeGroup />
         </div>
       </main>

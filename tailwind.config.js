@@ -12,6 +12,9 @@ module.exports = {
           primary: '#E6E7E9',
         },
       },
+      boxShadow: {
+        abub: '-10px 10px 26px 0px rgba(0, 0, 0, 0.3)'
+      }
     },
   },
   plugins: [],

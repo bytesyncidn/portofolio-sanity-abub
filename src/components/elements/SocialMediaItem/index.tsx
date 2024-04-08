@@ -26,7 +26,7 @@ const SocialMediaItem = (props: SocialMediaItemProps) => {
       </div>
 
       <div className="flex flex-col text-lg">
-        <p className="font-no">{socialMediaRender.label}</p>
+        <p>{socialMediaRender.label}</p>
         <p className="font-medium">{props.value}</p>
       </div>
     </a>

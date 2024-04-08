@@ -1,6 +1,6 @@
 import ImagePortfolioMarquee from '../ImagePortfolioMarquee';
 
-const images = new Array(9).fill('https://placehold.co/265x335.png');
+const images = new Array(9).fill('https://cdn.sanity.io/images/d8cd0qwt/production/0c6d3e1e64ca2b965073c4c030dc0f4159c6f34c-474x592.jpg');
 
 const ImagePortfolioMarqueeGroup = () => {
   return (
@@ -9,12 +9,12 @@ const ImagePortfolioMarqueeGroup = () => {
       <ImagePortfolioMarquee
         images={images}
         translate={{ x: '-410px' }}
-        speed={50}
+        speed={100}
       />
       <ImagePortfolioMarquee
         images={images}
         translate={{ x: '-840px' }}
-        speed={25}
+        speed={75}
       />
     </>
   );

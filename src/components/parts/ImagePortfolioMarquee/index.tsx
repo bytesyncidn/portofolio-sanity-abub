@@ -1,7 +1,7 @@
 import Image from 'next/image';
-// import Marquee from 'react-fast-marquee';
-import Marquee from 'react-marquee-slider';
+import Marquee from 'react-fast-marquee';
 
+// import Marquee from 'react-marquee-slider';
 import { generateRandomKey } from '~/lib/utils';
 
 import { ImagePortfolioMarqueeProps } from './types';
@@ -9,7 +9,7 @@ import { ImagePortfolioMarqueeProps } from './types';
 const ImagePortfolioMarquee = ({
   images,
   translate,
-  speed = 0,
+  speed,
 }: ImagePortfolioMarqueeProps) => {
   const getTranslateValue = (value?: string | number) => {
     const transalteValue = value ?? 0;
@@ -26,7 +26,7 @@ const ImagePortfolioMarquee = ({
         translate: `calc(-50% + ${getTranslateValue(translate?.x)}) calc(-50% + ${getTranslateValue(translate?.y)})`,
       }}
     >
-      {/* <Marquee autoFill speed={speed}>
+      <Marquee autoFill speed={speed}>
         {images.map((image) => (
           <div
             key={generateRandomKey()}
@@ -37,13 +37,13 @@ const ImagePortfolioMarquee = ({
               alt="image"
               width="265"
               height="335"
-              className="aspect-[265/335] h-full object-contain -rotate-90"
+              className="aspect-[265/335] h-full object-cover -rotate-90 rounded-xl shadow-abub"
             />
           </div>
         ))}
-      </Marquee> */}
+      </Marquee>
 
-      <Marquee
+      {/* <Marquee
         direction="rtl"
         velocity={25 + speed}
         resetAfterTries={2000}
@@ -61,11 +61,11 @@ const ImagePortfolioMarquee = ({
               alt="image"
               width="265"
               height="335"
-              className="aspect-[265/335] h-full object-contain -rotate-90"
+              className="aspect-[265/335] h-full object-contain -rotate-90 rounded-xl shadow-abub"
             />
           </div>
         ))}
-      </Marquee>
+      </Marquee> */}
     </div>
   );
 };
