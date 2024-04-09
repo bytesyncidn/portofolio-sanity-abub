@@ -1,5 +1,7 @@
+import { Media } from '~/types/sanity';
+
 export type ImagePortfolioMarqueeProps = {
-  images: string[]
+  images: Media[]
   translate?: {
     x?: string | number
     y?: string | number

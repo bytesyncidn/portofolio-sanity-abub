@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useMemo } from 'react';
 import Marquee from 'react-fast-marquee';
 
+import { urlForImage } from '~/lib/sanity/sanity.image';
 import {
   generateRandomKey,
   getDeviceUserAgentServer,
@@ -47,10 +48,11 @@ const ImagePortfolioMarquee = ({
             className="aspect-square h-[200px] md:h-[350px] xl:h-[335px] mr-4 lg:mr-8 flex justify-center"
           >
             <Image
-              src={image}
-              alt="image"
+              src={urlForImage(image.mainImage)?.url() ?? 'https://placehold.co/265x335.png'}
+              alt={image.title}
               width="265"
               height="335"
+              priority
               className="w-[158px] h-[200px] md:w-[277px] md:h-[350px] xl:w-[265px] xl:h-[335px] -rotate-90 object-cover rounded-xl shadow-abub-down ld:shadow-abub-left"
             />
           </div>

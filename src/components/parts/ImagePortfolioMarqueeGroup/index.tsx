@@ -1,18 +1,23 @@
-import { useCallback } from 'react';
+import { draftMode } from 'next/headers';
 
 import Each from '~/components/elements/Each';
+import { readToken } from '~/lib/sanity/sanity.api';
+import { getClient } from '~/lib/sanity/sanity.client';
+import { getMedia } from '~/lib/sanity/sanity.queries';
 import { getDeviceUserAgentServer, UserAgentDevice } from '~/lib/utils';
 
 import ImagePortfolioMarquee from '../ImagePortfolioMarquee';
 
-const images = new Array(9).fill(
-  'https://cdn.sanity.io/images/d8cd0qwt/production/0c6d3e1e64ca2b965073c4c030dc0f4159c6f34c-474x592.jpg',
-);
+const MIN_IMAGE_LENGTH = 3;
 
-const ImagePortfolioMarqueeGroup = () => {
-  const device = getDeviceUserAgentServer();
+const ImagePortfolioMarqueeGroup = async () => {
+  const { isEnabled: isEnabledDraftMode } = draftMode();
+  const client = getClient(isEnabledDraftMode ? { token: readToken } : undefined);
+  const medias = await getMedia(client);
 
-  const getAttributeMarquee = useCallback(
+  const device  = getDeviceUserAgentServer();
+
+  const getAttributeMarquee = 
     (index: number) => {
       if (device === UserAgentDevice.Mobile) {
         if (index === 0) {
@@ -65,9 +70,7 @@ const ImagePortfolioMarqueeGroup = () => {
           };
         }
       }
-    },
-    [device],
-  );
+    };
 
   return (
     <div>
@@ -75,7 +78,7 @@ const ImagePortfolioMarqueeGroup = () => {
         list={new Array(3).fill(0)}
         render={(_, index) => (
           <ImagePortfolioMarquee
-            images={images}
+            images={medias.length >= MIN_IMAGE_LENGTH ? medias : [...medias, ...(new Array(MIN_IMAGE_LENGTH - medias.length).fill(medias[0] ?? []))]}
             {...getAttributeMarquee(index)}
           />
         )}
