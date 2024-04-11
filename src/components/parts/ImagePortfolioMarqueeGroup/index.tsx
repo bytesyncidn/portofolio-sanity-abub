@@ -22,34 +22,34 @@ const ImagePortfolioMarqueeGroup = async () => {
       if (device === UserAgentDevice.Mobile) {
         if (index === 0) {
           return {
-            speed: 10,
+            speed: 8,
             translate: { x: '50%' },
           };
         } else if (index === 1) {
           return {
-            speed: 20,
+            speed: 9,
             translate: { x: '50% - 180px' },
           };
         } else {
           return {
-            speed: 15,
+            speed: 10,
             translate: { x: '50% + 180px' },
           };
         }
       } else if (device === UserAgentDevice.Tablet) {
         if (index === 0) {
           return {
-            speed: 10,
+            speed: 8,
             translate: { x: '50%' },
           };
         } else if (index === 1) {
           return {
-            speed: 20,
+            speed: 9,
             translate: { x: '50% - 320px' },
           };
         } else {
           return {
-            speed: 15,
+            speed: 10,
             translate: { x: '50% + 320px' },
           };
         }
