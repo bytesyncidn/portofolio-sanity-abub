@@ -6,3 +6,10 @@ export interface Media {
   title: string
   mainImage: ImageAsset
 }
+
+export interface Logo {
+  _type: 'media'
+  _id: string
+  title: string
+  logoImage: ImageAsset
+}
