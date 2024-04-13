@@ -22,17 +22,17 @@ const ImagePortfolioMarqueeGroup = async () => {
       if (device === UserAgentDevice.Mobile) {
         if (index === 0) {
           return {
-            speed: 8,
+            speed: 2,
             translate: { x: '50%' },
           };
         } else if (index === 1) {
           return {
-            speed: 9,
+            speed: 3,
             translate: { x: '50% - 180px' },
           };
         } else {
           return {
-            speed: 10,
+            speed: 4,
             translate: { x: '50% + 180px' },
           };
         }
