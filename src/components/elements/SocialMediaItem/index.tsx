@@ -25,7 +25,7 @@ const SocialMediaItem = (props: SocialMediaItemProps) => {
         <socialMediaRender.icon className="md:text-4xl text-white" />
       </div>
 
-      <div className="flex flex-col text-[10px] md:text-lg">
+      <div className="flex flex-col text-[8px] md:text-lg">
         <p>{socialMediaRender.label}</p>
         <p className="font-medium">{props.value}</p>
       </div>
